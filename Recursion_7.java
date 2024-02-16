@@ -8,15 +8,19 @@ public class Recursion_7 {
         List<Integer> list4 = List.of(2, 2, 3, 3); // 3, 3
         List<Integer> list5 = List.of(5, 2, 3, 4, 5); // 5, 5
         List<Integer> list6 = List.of(0, 1, 10, 9, 6, 0); // 10, 9
-        System.out.println(findSecondBiggest(list1, list1.size(), 0, 0));
-        System.out.println(findSecondBiggest(list2, list2.size(), 0, 0));
-        System.out.println(findSecondBiggest(list3, list3.size(), 0, 0));
-        System.out.println(findSecondBiggest(list4, list4.size(), 0, 0));
-        System.out.println(findSecondBiggest(list5, list5.size(), 0, 0));
-        System.out.println(findSecondBiggest(list6, list6.size(), 0, 0));
+        System.out.println(findSecondBiggest(list1));
+        System.out.println(findSecondBiggest(list2));
+        System.out.println(findSecondBiggest(list3));
+        System.out.println(findSecondBiggest(list4));
+        System.out.println(findSecondBiggest(list5));
+        System.out.println(findSecondBiggest(list6));
     }
 
-    public static int findSecondBiggest(List<Integer> list, int listSize, int biggest, int secondBiggest) {
+    public static int findSecondBiggest(List<Integer> list) {
+        return findSecondBiggest_recursion(list, list.size(), 0, 0);
+    }
+
+    public static int findSecondBiggest_recursion(List<Integer> list, int listSize, int biggest, int secondBiggest) {
         int index = listSize - 1;
         if (index < 0) return secondBiggest;
         int tmpBiggest = biggest;
@@ -29,6 +33,6 @@ public class Recursion_7 {
         if (i < biggest && i > secondBiggest) {
             tmpSecondBiggest = i;
         }
-        return findSecondBiggest(list, --listSize, tmpBiggest, tmpSecondBiggest);
+        return findSecondBiggest_recursion(list, --listSize, tmpBiggest, tmpSecondBiggest);
     }
 }
