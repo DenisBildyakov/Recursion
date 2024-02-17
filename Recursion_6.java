@@ -10,16 +10,13 @@ public class Recursion_6 {
 
     public static void printEvenIndexes(List<Integer> list) {
         int indexOfLast = list.indexOf(list.getLast());
-        list.addLast(indexOfLast);
-        printEvenIndexes_recursion(list);
+        printEvenIndexes_recursion(list, indexOfLast);
     }
 
-    public static void printEvenIndexes_recursion(List<Integer> list) {
-        Integer index = list.removeLast();
+    public static void printEvenIndexes_recursion(List<Integer> list, int index) {
         if (index < 0) return;
         index = index - (index % 2);
         System.out.println(list.get(index));
-        list.addLast(--index);
-        printEvenIndexes_recursion(list);
+        printEvenIndexes_recursion(list, --index);
     }
 }

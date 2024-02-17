@@ -29,12 +29,12 @@ public class Recursion_7 {
     }
 
     public static int findSecondBiggest(List<Integer> list) {
-        return findSecondBiggest_recursion(list, list.size(), Integer.MIN_VALUE, Integer.MIN_VALUE);
+        return findSecondBiggest_recursion(list, 1, list.get(0), list.get(1));
     }
 
     public static int findSecondBiggest_recursion(List<Integer> list, int listSize, int biggest, int secondBiggest) {
-        int index = listSize - 1;
-        if (index < 0) return secondBiggest;
+        int index = listSize;
+        if (index >= list.size()) return secondBiggest;
         int tmpBiggest = biggest;
         int tmpSecondBiggest = secondBiggest;
         Integer i = list.get(index);
@@ -45,6 +45,6 @@ public class Recursion_7 {
         if (i < biggest && i > secondBiggest) {
             tmpSecondBiggest = i;
         }
-        return findSecondBiggest_recursion(list, --listSize, tmpBiggest, tmpSecondBiggest);
+        return findSecondBiggest_recursion(list, ++index, tmpBiggest, tmpSecondBiggest);
     }
 }
