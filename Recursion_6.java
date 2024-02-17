@@ -9,14 +9,12 @@ public class Recursion_6 {
     }
 
     public static void printEvenIndexes(List<Integer> list) {
-        int indexOfLast = list.indexOf(list.getLast());
-        printEvenIndexes_recursion(list, indexOfLast);
+        printEvenIndexes_recursion(list, 0);
     }
 
     public static void printEvenIndexes_recursion(List<Integer> list, int index) {
-        if (index < 0) return;
-        index = index - (index % 2);
+        if (index >= list.size()) return;
         System.out.println(list.get(index));
-        printEvenIndexes_recursion(list, --index);
+        printEvenIndexes_recursion(list, index + 2);
     }
 }
