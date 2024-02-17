@@ -17,7 +17,8 @@ public class Recursion_6 {
     public static void printEvenIndexes_recursion(List<Integer> list) {
         Integer index = list.removeLast();
         if (index < 0) return;
-        if (index % 2 == 0) System.out.println(list.get(index));
+        index = index - (index % 2);
+        System.out.println(list.get(index));
         list.addLast(--index);
         printEvenIndexes_recursion(list);
     }
