@@ -14,6 +14,7 @@ public class Recursion_7 {
         List<Integer> list10 = List.of(-2, -2); // -2, -2
         List<Integer> list11 = List.of(-2, 2, -3); // 2, -2
         List<Integer> list12 = List.of(-2, 2, -3, 3); // 3, 2
+        List<Integer> list13 = List.of(8, 9, 5, 4, 8, 2, 4, 6, 3, 5, 1, 2, 5, 7, 1, 8, 7); // 9, 8
         System.out.println(findSecondBiggest(list1));
         System.out.println(findSecondBiggest(list2));
         System.out.println(findSecondBiggest(list3));
@@ -26,6 +27,7 @@ public class Recursion_7 {
         System.out.println(findSecondBiggest(list10));
         System.out.println(findSecondBiggest(list11));
         System.out.println(findSecondBiggest(list12));
+        System.out.println(findSecondBiggest(list13));
     }
 
     public static int findSecondBiggest(List<Integer> list) {
